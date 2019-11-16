@@ -1,14 +1,28 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Wizard Catalog
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-list>
+    <ion-item *ngFor="let book of books">
+      <ion-thumbnail slot="start">
+        <img src="https://wizard-pubhaws.store/assets/img/products/{{book.productPictureFront}}" alt="asdfasdf{{book.productName}}">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{book.productName}}</h2>
+        <p>Author: {{book.lastName}}, {{book.firstName}} {{book.middleName}}</p>
+        <p>Price: Php {{book.productPrice}}</p>
+        <p>Available Quantity: {{book.quantity}}</p>
+      </ion-label>
+      <ion-button slot="end" (click)="clickButton(book.productId)">
+        <ion-icon name="eye"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+  </ion-list>
 </ion-content>
+

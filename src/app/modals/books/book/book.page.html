@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Book Information</ion-title>
+    <ion-button slot="end" (click)="closeModal()" fill="clear">Close</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="https://wizard-pubhaws.store/assets/img/products/{{book.productPictureFront}}">
+    <ion-card-header>
+      <ion-card-title>{{book.productName}}</ion-card-title>
+      <ion-card-subtitle>by {{book.firstName}} {{book.middleName}} {{book.lastName}}</ion-card-subtitle>
+      <ion-card-subtitle>Published: {{book.datePublished}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      {{book.productDescription}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
